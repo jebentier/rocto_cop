@@ -1,0 +1,9 @@
+spec/
+.rspec
+.rubocop.yml
+.gitignore
+.github/
+.ruby-version
+Dockerfile
+LICENSE
+README.md
