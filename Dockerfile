@@ -1,13 +1,18 @@
 FROM ruby:2.6.5
 
-RUN gem install bundler:2.0.2
+RUN mkdir -p /rocto_cop
+ENV PATH "/rocto_cop/bin:${PATH}"
+WORKDIR /rocto_cop
 
-WORKDIR /app
 EXPOSE 3000
+
+RUN gem install bundler:2.0.2
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 COPY . .
 
-CMD ["bundle", "exec", "rackup", "config.ru", "-p", "3000"]
+ENTRYPOINT ["rocto_cop"]
+
+CMD ["start"]

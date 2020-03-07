@@ -3,6 +3,9 @@
 
 require_relative '../lib/rocto_cop'
 
-if ARGV[0] == 'version'
+case ARGV[0]
+when 'version'
   puts RoctoCop::VERSION
+when 'start'
+  `bundle exec rackup config.ru -p 3000`
 end
