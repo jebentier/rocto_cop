@@ -33,4 +33,8 @@ RSpec.configure do |config|
     stub_const('RoctoCop::GithubApp::APP_IDENTIFIER', '123456')
     stub_const('RoctoCop::GithubApp::WEBHOOK_SECRET', 'thisisasecret')
   end
+
+  def load_event(event_name)
+    File.open(File.expand_path("./files/#{event_name}.json", __dir__), &:read)
+  end
 end
