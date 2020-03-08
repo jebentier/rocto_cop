@@ -12,7 +12,7 @@ module RoctoCop
       def process(client)
         client.is_a?(Octokit::Client) or raise ArgumentError, 'Invalid client provided'
 
-        if requested_app_id == RoctoCop::GithubApp::APP_IDENTIFIER
+        if requested_app_id == RoctoCop::GithubApp::APP_IDENTIFIER && check_name.in?(RoctoCop::Checks.names)
           case action
           when 'rerequested'
             client.create_check_run(repository, check_name, head_sha)

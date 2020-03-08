@@ -32,6 +32,16 @@ RSpec.describe RoctoCop::Events::CheckRun do
         end
       end
 
+      describe 'when called with an unknown check name' do
+        let(:payload) { JSON.parse(load_event(:valid_check_run_rerequested)) }
+
+        it 'skips processing all together' do
+          expect(client).to_not receive(:create_check_run)
+          expect(subject).to receive(:check_name).and_return("unknown_check_name")
+          subject.process(client)
+        end
+      end
+
       describe 'with a rerequested action' do
         let(:payload) { JSON.parse(load_event(:valid_check_run_rerequested)) }
 
