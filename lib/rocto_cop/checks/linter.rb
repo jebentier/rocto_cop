@@ -44,11 +44,7 @@ module RoctoCop
       def actions
         unless reported_annotations.count.zero?
           [
-            {
-              label: 'Fix all these',
-              description: 'Fix all Roctocop Linter notices for me.',
-              identifier: 'fix_roctocop_linter'
-            }
+            RoctoCop::Actions::Linter::FixAll.action_definition
           ]
         end
       end
