@@ -50,6 +50,15 @@ RSpec.describe RoctoCop::Events::CheckRun do
           subject.process(client)
         end
       end
+
+      describe 'with a created action' do
+        let(:payload) { JSON.parse(load_event(:valid_check_run_created)) }
+
+        it 'runs the provided check' do
+          expect(RoctoCop::Checks).to receive(:run).with('RoctoCop Linter', client, 'test/test_repo', 'thisshaishead', 123456123)
+          subject.process(client)
+        end
+      end
     end
   end
 end
