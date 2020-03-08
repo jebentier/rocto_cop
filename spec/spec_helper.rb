@@ -37,4 +37,8 @@ RSpec.configure do |config|
   def load_event(event_name)
     File.open(File.expand_path("./files/#{event_name}.json", __dir__), &:read)
   end
+
+  def event_signature(event_name)
+    "sha1=#{OpenSSL::HMAC.hexdigest('sha1', RoctoCop::GithubApp::WEBHOOK_SECRET, load_event(event_name))}"
+  end
 end

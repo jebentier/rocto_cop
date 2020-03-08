@@ -38,6 +38,11 @@ module RoctoCop
     end
 
     post '/event_handler' do
+      case request.env[RoctoCop::GithubApp::GITHUB_EVENT_HEADER]
+      when 'check_suite' then RoctoCop::Events::CheckSuite.new(payload).process(client)
+      else logger.debug "----  Unknown event"
+      end
+
       200
     end
   end
