@@ -15,7 +15,9 @@ module RoctoCop
         client.is_a?(Octokit::Client) or raise ArgumentError, 'Invalid client provided'
 
         if action.in?(PROCESSABLE_ACTIONS)
-          client.create_check_run(repository, 'RoctoCop Linter', head_sha)
+          RoctoCop::Checks.all.each do |check_name|
+            client.create_check_run(repository, check_name, head_sha)
+          end
         end
       end
 

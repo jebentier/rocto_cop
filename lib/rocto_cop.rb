@@ -11,6 +11,9 @@ require_relative 'rocto_cop/github_app'
 require_relative 'rocto_cop/events/check_suite'
 require_relative 'rocto_cop/events/check_run'
 
+require_relative 'rocto_cop/checks'
+require_relative 'rocto_cop/checks/linter'
+
 require_relative 'rocto_cop/helpers/app_client'
 require_relative 'rocto_cop/helpers/request'
 
