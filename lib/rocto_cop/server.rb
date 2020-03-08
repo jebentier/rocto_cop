@@ -22,12 +22,12 @@ module RoctoCop
       verify_webhook_signature
 
       logger.debug "---- received event #{request.env[RoctoCop::GithubApp::GITHUB_ACTION_HEADER]}"
-      logger.debug "----   action: #{payload['action'].inspect}"
+      logger.debug "----  action: #{payload['action'].inspect}"
 
       repository_name = payload.dig('repository', 'name') || ""
       (repository_name =~ /[0-9A-Za-z\-\_]+/).present? or halt 400
 
-      logger.debug "----    repository: #{repository_name}"
+      logger.debug "----  repository: #{repository_name}"
 
       app_client
       client
@@ -38,9 +38,13 @@ module RoctoCop
     end
 
     post '/event_handler' do
-      case request.env[RoctoCop::GithubApp::GITHUB_EVENT_HEADER]
-      when 'check_suite' then RoctoCop::Events::CheckSuite.new(payload).process(client)
-      else logger.debug "----  Unknown event"
+      request.env[RoctoCop::GithubApp::GITHUB_EVENT_HEADER].tap do |event|
+        logger.debug "----  event: #{event}"
+
+        case request.env[RoctoCop::GithubApp::GITHUB_EVENT_HEADER]
+        when 'check_suite' then RoctoCop::Events::CheckSuite.new(payload).process(client)
+        else logger.debug "----  Unknown event"
+        end
       end
 
       200
