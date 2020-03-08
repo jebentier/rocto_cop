@@ -43,6 +43,7 @@ module RoctoCop
 
         case request.env[RoctoCop::GithubApp::GITHUB_EVENT_HEADER]
         when 'check_suite' then RoctoCop::Events::CheckSuite.new(payload).process(client)
+        when 'check_run'   then RoctoCop::Events::CheckRun.new(payload).process(client)
         else logger.debug "----  Unknown event"
         end
       end

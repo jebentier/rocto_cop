@@ -103,11 +103,30 @@ RSpec.describe RoctoCop::Server do
           RoctoCop::GithubApp::GITHUB_EVENT_HEADER     => 'check_suite'
         }
       end
-
       let(:event)   { double(RoctoCop::Events::CheckSuite) }
 
       it 'processes the event and returns a 200' do
         expect(RoctoCop::Events::CheckSuite).to receive(:new).with(JSON.parse(payload)).and_return(event)
+        expect(event).to receive(:process)
+
+        post '/event_handler', payload, { 'CONTENT_TYPE' => 'application/json' }.merge(headers)
+
+        expect(last_response.status).to eq(200)
+      end
+    end
+
+    describe 'with a valid check_run request event' do
+      let(:payload) { load_event(:valid_check_run_created) }
+      let(:headers) do
+        {
+          RoctoCop::GithubApp::GITHUB_SIGNATURE_HEADER => event_signature(:valid_check_run_created),
+          RoctoCop::GithubApp::GITHUB_EVENT_HEADER     => 'check_run'
+        }
+      end
+      let(:event)   { double(RoctoCop::Events::CheckRun) }
+
+      it 'processes the event and returns 200' do
+        expect(RoctoCop::Events::CheckRun).to receive(:new).with(JSON.parse(payload)).and_return(event)
         expect(event).to receive(:process)
 
         post '/event_handler', payload, { 'CONTENT_TYPE' => 'application/json' }.merge(headers)
