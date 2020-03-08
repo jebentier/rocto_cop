@@ -55,7 +55,6 @@ RSpec.describe RoctoCop::Helpers::Request do
 
   describe 'verify_webhook_signature' do
     before(:each) do
-      stub_const('RoctoCop::GithubApp::WEBHOOK_SECRET', 'testdigestforverification')
       expect(request).to receive(:env).and_return({ RoctoCop::GithubApp::GITHUB_SIGNATURE_HEADER => digest })
     end
 

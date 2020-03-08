@@ -19,10 +19,6 @@ RSpec.describe RoctoCop::Server do
     let(:payload) { {}.to_json }
     let(:headers) { {} }
     before(:each) {
-      stub_const('RoctoCop::GithubApp::PRIVATE_KEY', OpenSSL::PKey::RSA.generate(2048))
-      stub_const('RoctoCop::GithubApp::APP_IDENTIFIER', '123456')
-      stub_const('RoctoCop::GithubApp::WEBHOOK_SECRET', 'thisisasecret')
-
       allow_any_instance_of(Octokit::Client).to(
         receive(:create_app_installation_access_token).with(anything).and_return(token: 12323445)
       )

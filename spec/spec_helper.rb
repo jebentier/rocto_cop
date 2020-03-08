@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rack/test'
+require 'openssl'
 require_relative '../lib/rocto_cop'
 
 RSpec.configure do |config|
@@ -26,4 +27,10 @@ RSpec.configure do |config|
 
   config.order = :random
   Kernel.srand config.seed
+
+  config.before(:each) do
+    stub_const('RoctoCop::GithubApp::PRIVATE_KEY', OpenSSL::PKey::RSA.generate(2048))
+    stub_const('RoctoCop::GithubApp::APP_IDENTIFIER', '123456')
+    stub_const('RoctoCop::GithubApp::WEBHOOK_SECRET', 'thisisasecret')
+  end
 end
