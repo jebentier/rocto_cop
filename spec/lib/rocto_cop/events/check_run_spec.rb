@@ -42,7 +42,7 @@ RSpec.describe RoctoCop::Events::CheckRun do
         end
       end
 
-      describe 'with a rerequested action' do
+      describe 'with a rerequested run' do
         let(:payload) { JSON.parse(load_event(:valid_check_run_rerequested)) }
 
         it 'creates a new RoctoCop Linter check_run' do
@@ -51,11 +51,20 @@ RSpec.describe RoctoCop::Events::CheckRun do
         end
       end
 
-      describe 'with a created action' do
+      describe 'with a created run' do
         let(:payload) { JSON.parse(load_event(:valid_check_run_created)) }
 
         it 'runs the provided check' do
-          expect(RoctoCop::Checks).to receive(:run).with('RoctoCop Linter', client, 'test/test_repo', 'thisshaishead', 123456123)
+          expect(RoctoCop::Checks).to receive(:run).with('RoctoCop Linter', client, 'test/test_repo', 'thisshaishead', 123_456_123)
+          subject.process(client)
+        end
+      end
+
+      describe 'with a requested action' do
+        let(:payload) { JSON.parse(load_event(:valid_requested_action_linter_fix)) }
+
+        it 'runs the provided action' do
+          expect(RoctoCop::Actions).to receive(:run).with('fix_roctocop_linter', client, 'test/test_repo', 'testing-patch-1', 789_456_123)
           subject.process(client)
         end
       end

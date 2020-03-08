@@ -4,6 +4,7 @@ require 'rack/test'
 require 'openssl'
 require_relative '../lib/rocto_cop'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.include Rack::Test::Methods
 
@@ -43,3 +44,4 @@ RSpec.configure do |config|
     "sha1=#{OpenSSL::HMAC.hexdigest('sha1', RoctoCop::GithubApp::WEBHOOK_SECRET, load_event(event_name))}"
   end
 end
+# rubocop:enable Metrics/BlockLength

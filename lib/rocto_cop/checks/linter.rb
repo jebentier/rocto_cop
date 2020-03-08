@@ -44,11 +44,7 @@ module RoctoCop
       def actions
         unless reported_annotations.count.zero?
           [
-            {
-              label: 'Fix all these',
-              description: 'Fix all Roctocop Linter notices for me.',
-              identifier: 'fix_roctocop_linter'
-            }
+            RoctoCop::Actions::Linter::FixAll.action_definition
           ]
         end
       end
@@ -71,7 +67,11 @@ module RoctoCop
           env = RuboCop::CLI::Environment.new(options, RuboCop::ConfigStore.new, paths)
 
           runner = RuboCop::Runner.new(env.options, env.config_store)
-          runner.run(env.paths) rescue nil
+          begin
+            runner.run(env.paths)
+          rescue
+            nil
+          end
 
           runner.send(:formatter_set).first.output_hash
         end
