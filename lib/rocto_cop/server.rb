@@ -4,9 +4,6 @@ require 'active_support/all'
 require 'sinatra'
 require 'logger'
 
-require_relative 'helpers/app_client'
-require_relative 'helpers/request'
-
 set :port, 3000
 set :bind, '0.0.0.0'
 
