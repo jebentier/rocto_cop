@@ -4,12 +4,14 @@ module RoctoCop
   module Actions
     module Linter
       class FixAll
+        ACTION_NAME = 'fix_roctocop_linter'
+
         class << self
           def action_definition
             {
               label: 'Fix all these',
               description: 'Fix all Roctocop Linter notices for me.',
-              identifier: 'fix_roctocop_linter'
+              identifier: ACTION_NAME
             }
           end
         end

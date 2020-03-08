@@ -18,6 +18,8 @@ module RoctoCop
             RoctoCop::Checks.run(check_name, client, repository, head_sha, run_id)
           when 'rerequested'
             client.create_check_run(repository, check_name, head_sha)
+          when 'requested_action'
+            RoctoCop::Actions.run(requested_action, client, repository, branch, run_id)
           end
         end
       end
@@ -46,6 +48,14 @@ module RoctoCop
 
       def run_id
         request_payload.dig('check_run', 'id')
+      end
+
+      def requested_action
+        request_payload.dig('requested_action', 'identifier')
+      end
+
+      def branch
+        request_payload.dig('check_run', 'check_suite', 'head_branch')
       end
     end
   end
