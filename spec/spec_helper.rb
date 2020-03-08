@@ -4,6 +4,7 @@ require 'rack/test'
 require 'openssl'
 require_relative '../lib/rocto_cop'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.include Rack::Test::Methods
 
