@@ -17,8 +17,8 @@ module RoctoCop
       def payload
         @payload ||= begin
           JSON.parse(raw_payload)
-        rescue => ex
-          fail "Unable to parse payload (#{ex}): #{raw_payload}"
+                     rescue => e
+                       fail "Unable to parse payload (#{e}): #{raw_payload}"
         end
       end
 

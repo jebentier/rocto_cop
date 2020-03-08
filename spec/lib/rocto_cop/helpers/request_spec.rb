@@ -20,13 +20,13 @@ RSpec.describe RoctoCop::Helpers::Request do
 
   subject { RequestDummyServer.new }
 
-  before(:each) {
+  before(:each) do
     allow(subject).to receive(:app_client).and_return(app_client)
     allow(subject).to receive(:request).and_return(request)
     allow(request).to receive(:body).and_return(body_proxy)
     allow(body_proxy).to receive(:rewind)
     allow(body_proxy).to receive(:read).and_return(body)
-  }
+  end
 
   describe 'raw_payload' do
     it "returns the unparsed json body" do
@@ -59,7 +59,7 @@ RSpec.describe RoctoCop::Helpers::Request do
     end
 
     describe 'with matching digest' do
-      let(:digest) { "sha1=#{OpenSSL::HMAC.hexdigest("sha1", RoctoCop::GithubApp::WEBHOOK_SECRET, body)}" }
+      let(:digest) { "sha1=#{OpenSSL::HMAC.hexdigest('sha1', RoctoCop::GithubApp::WEBHOOK_SECRET, body)}" }
 
       it 'it returns true' do
         expect(subject).to_not receive(:halt)

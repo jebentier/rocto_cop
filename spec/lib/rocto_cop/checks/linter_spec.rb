@@ -61,7 +61,6 @@ RSpec.describe RoctoCop::Checks::Linter do
         Reported Offenses: 0 out of 0
       SUMMARY
 
-
       it 'reports success' do
         expect(client).to(
           receive(:update_check_run)

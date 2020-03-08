@@ -85,7 +85,7 @@ RSpec.describe RoctoCop::Server do
       let(:headers) do
         {
           RoctoCop::GithubApp::GITHUB_SIGNATURE_HEADER => event_signature(:valid_check_suite_request),
-          RoctoCop::GithubApp::GITHUB_EVENT_HEADER     => 'unknown'
+          RoctoCop::GithubApp::GITHUB_EVENT_HEADER => 'unknown'
         }
       end
 
@@ -100,7 +100,7 @@ RSpec.describe RoctoCop::Server do
       let(:headers) do
         {
           RoctoCop::GithubApp::GITHUB_SIGNATURE_HEADER => event_signature(:valid_check_suite_request),
-          RoctoCop::GithubApp::GITHUB_EVENT_HEADER     => 'check_suite'
+          RoctoCop::GithubApp::GITHUB_EVENT_HEADER => 'check_suite'
         }
       end
       let(:event)   { double(RoctoCop::Events::CheckSuite) }
@@ -120,7 +120,7 @@ RSpec.describe RoctoCop::Server do
       let(:headers) do
         {
           RoctoCop::GithubApp::GITHUB_SIGNATURE_HEADER => event_signature(:valid_check_run_created),
-          RoctoCop::GithubApp::GITHUB_EVENT_HEADER     => 'check_run'
+          RoctoCop::GithubApp::GITHUB_EVENT_HEADER => 'check_run'
         }
       end
       let(:event)   { double(RoctoCop::Events::CheckRun) }
