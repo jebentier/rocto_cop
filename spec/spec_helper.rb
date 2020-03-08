@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rack/test'
+require 'openssl'
 require_relative '../lib/rocto_cop'
 
 RSpec.configure do |config|
@@ -8,6 +9,7 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+    expectations.max_formatted_output_length = nil
   end
 
   config.mock_with :rspec do |mocks|
@@ -26,4 +28,18 @@ RSpec.configure do |config|
 
   config.order = :random
   Kernel.srand config.seed
+
+  config.before(:each) do
+    stub_const('RoctoCop::GithubApp::PRIVATE_KEY', OpenSSL::PKey::RSA.generate(2048))
+    stub_const('RoctoCop::GithubApp::APP_IDENTIFIER', '123456')
+    stub_const('RoctoCop::GithubApp::WEBHOOK_SECRET', 'thisisasecret')
+  end
+
+  def load_event(event_name)
+    File.open(File.expand_path("./files/#{event_name}.json", __dir__), &:read)
+  end
+
+  def event_signature(event_name)
+    "sha1=#{OpenSSL::HMAC.hexdigest('sha1', RoctoCop::GithubApp::WEBHOOK_SECRET, load_event(event_name))}"
+  end
 end

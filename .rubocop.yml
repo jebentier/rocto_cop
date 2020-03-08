@@ -29,9 +29,6 @@ Layout/EndOfLine:
 Layout/ExtraSpacing:
   Enabled: false
 
-Layout/IndentHeredoc:
-  EnforcedStyle: unindent
-
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented_relative_to_receiver
 
