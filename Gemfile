@@ -3,6 +3,9 @@
 source 'https://rubygems.org'
 
 gem 'activesupport', '~> 5.0'
+gem 'dotenv',        '~> 2.7'
+gem 'jwt',           '~> 2.1'
+gem 'octokit',       '~> 4.0'
 gem 'sinatra',       '~> 2.0'
 
 group :test do
