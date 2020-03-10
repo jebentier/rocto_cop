@@ -36,7 +36,9 @@ RSpec.describe RoctoCop::Events::CheckSuite do
         let(:payload) { JSON.parse(load_event(:valid_check_suite_request)) }
 
         it 'creates a new RoctoCop Linter check_run' do
-          expect(client).to receive(:create_check_run).with('test/test_repo', 'RoctoCop Linter', 'shaofthehead')
+          RoctoCop::Checks.names.each do |check_name|
+            expect(client).to receive(:create_check_run).with('test/test_repo', check_name, 'shaofthehead')
+          end
           subject.process(client)
         end
       end
@@ -45,7 +47,9 @@ RSpec.describe RoctoCop::Events::CheckSuite do
         let(:payload) { JSON.parse(load_event(:valid_check_suite_rerequest)) }
 
         it 'creates a new RoctoCop Linter check_run' do
-          expect(client).to receive(:create_check_run).with('test/test_repo', 'RoctoCop Linter', 'shaofthehead')
+          RoctoCop::Checks.names.each do |check_name|
+            expect(client).to receive(:create_check_run).with('test/test_repo', check_name, 'shaofthehead')
+          end
           subject.process(client)
         end
       end
