@@ -11,6 +11,7 @@ gem 'rubocop',       '~> 0.80'
 gem 'sinatra',       '~> 2.0'
 
 group :test do
-  gem 'rack-test', '~> 1.0'
-  gem 'rspec',     '~> 3.9'
+  gem 'rack-test',             '~> 1.0'
+  gem 'rspec',                 '~> 3.9'
+  gem 'rspec_junit_formatter', '~> 0.4'
 end
