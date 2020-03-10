@@ -63,7 +63,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Max: 10
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 150
   Exclude:
     - '**/*_test.rb'
