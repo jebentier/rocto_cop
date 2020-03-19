@@ -63,7 +63,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Max: 10
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 150
   Exclude:
     - '**/*_test.rb'
@@ -144,6 +144,15 @@ Style/NumericPredicate:
 
 Style/ParallelAssignment:
   Enabled: false
+   
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
 
 Style/PreferredHashMethods:
   Enabled: false
