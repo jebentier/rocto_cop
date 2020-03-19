@@ -124,7 +124,7 @@ module RoctoCop
       end
 
       def tmpdir
-        @tmpdir ||= File.expand_path(run_id.to_s, Dir.tmpdir)
+        @tmpdir ||= File.expand_path("#{run_id}/tester", Dir.tmpdir)
       end
     end
   end

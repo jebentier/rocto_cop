@@ -214,9 +214,7 @@ RSpec.describe RoctoCop::Checks::Rspec do
             end_line: 128,
             message: <<~ANNOTATION.chomp,
               RoctoCop::Server POST /event_handler with a valid check_run request event processes the event and returns 200
-                  RSpec::Expectations::ExpectationNotMetError:
-              expected: 500
-                   got: 200
+                  RSpec::Expectations::ExpectationNotMetError: #{"\nexpected: 500\n     got: 200"}
 
               (compared using ==)
 
