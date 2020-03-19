@@ -1,0 +1,508 @@
+{
+  "version": "3.9.1",
+  "seed": 62782,
+  "examples": [
+    {
+      "id": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb[1:1:1]",
+      "description": "returns the expected action",
+      "full_description": "RoctoCop::Actions::Linter::FixAll#action_definition returns the expected action",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb",
+      "line_number": 17,
+      "run_time": 0.041808,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb[1:2:1]",
+      "description": "runs to completion",
+      "full_description": "RoctoCop::Actions::Linter::FixAll instance runs to completion",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb",
+      "line_number": 46,
+      "run_time": 0.1159108,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/app_client_spec.rb[1:1]",
+      "description": "is expected to be a kind of Octokit::Client",
+      "full_description": "RoctoCop::Helpers::AppClient is expected to be a kind of Octokit::Client",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/app_client_spec.rb",
+      "line_number": 17,
+      "run_time": 0.0265279,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/app_client_spec.rb[1:2:1]",
+      "description": "uses a jwt token with a 10 minute expiration",
+      "full_description": "RoctoCop::Helpers::AppClient Bearer Token uses a jwt token with a 10 minute expiration",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/app_client_spec.rb",
+      "line_number": 24,
+      "run_time": 0.0243814,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/app_client_spec.rb[1:2:3]",
+      "description": "uses the app identifier",
+      "full_description": "RoctoCop::Helpers::AppClient Bearer Token uses the app identifier",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/app_client_spec.rb",
+      "line_number": 32,
+      "run_time": 0.0435126,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/app_client_spec.rb[1:2:2]",
+      "description": "uses now as the initiated at time",
+      "full_description": "RoctoCop::Helpers::AppClient Bearer Token uses now as the initiated at time",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/app_client_spec.rb",
+      "line_number": 28,
+      "run_time": 0.0282184,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:1:1]",
+      "description": "returns 200 status code",
+      "full_description": "RoctoCop::Server GET /is_alive returns 200 status code",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 13,
+      "run_time": 0.1690103,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:3:1]",
+      "description": "processes the event and returns a 200",
+      "full_description": "RoctoCop::Server POST /event_handler with a valid check_suite request event processes the event and returns a 200",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 108,
+      "run_time": 0.0949358,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:4:1]",
+      "description": "processes the event and returns 200",
+      "full_description": "RoctoCop::Server POST /event_handler with a valid check_run request event processes the event and returns 200",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 128,
+      "run_time": 0.0408307,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:2:1]",
+      "description": "processes the event and returns a 200",
+      "full_description": "RoctoCop::Server POST /event_handler with an valid unknown event processes the event and returns a 200",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 92,
+      "run_time": 0.0102739,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:1:2:1:1]",
+      "description": "responds with a 400",
+      "full_description": "RoctoCop::Server POST /event_handler event validations with a valid signature without a repository name in the payload responds with a 400",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 51,
+      "run_time": 0.0526917,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:1:2:2:1]",
+      "description": "responds with 200",
+      "full_description": "RoctoCop::Server POST /event_handler event validations with a valid signature with a repository name in the payload responds with 200",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 76,
+      "run_time": 0.030766,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:1:1:1]",
+      "description": "halts with 401",
+      "full_description": "RoctoCop::Server POST /event_handler event validations with an invalid signature halts with 401",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+      "line_number": 36,
+      "run_time": 0.164731,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/checks/linter_spec.rb[1:1]",
+      "description": "has a CHECK_NAME defined",
+      "full_description": "RoctoCop::Checks::Linter has a CHECK_NAME defined",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/checks/linter_spec.rb",
+      "line_number": 6,
+      "run_time": 0.0516111,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/checks/linter_spec.rb[1:2:1:1]",
+      "description": "reports success",
+      "full_description": "RoctoCop::Checks::Linter instance when there are no annotations reports success",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/checks/linter_spec.rb",
+      "line_number": 64,
+      "run_time": 0.0265839,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/checks/linter_spec.rb[1:2:2:1]",
+      "description": "reports neutral",
+      "full_description": "RoctoCop::Checks::Linter instance when there are annotations to process reports neutral",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/checks/linter_spec.rb",
+      "line_number": 125,
+      "run_time": 0.0371735,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:1:1]",
+      "description": "returns the unparsed json body",
+      "full_description": "RoctoCop::Helpers::Request raw_payload returns the unparsed json body",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+      "line_number": 32,
+      "run_time": 0.0482367,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:3:1]",
+      "description": "returns an Octokit Client",
+      "full_description": "RoctoCop::Helpers::Request client returns an Octokit Client",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+      "line_number": 51,
+      "run_time": 0.0727274,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:4:1:1]",
+      "description": "it returns true",
+      "full_description": "RoctoCop::Helpers::Request verify_webhook_signature with matching digest it returns true",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+      "line_number": 64,
+      "run_time": 0.097019,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:4:2:1]",
+      "description": "halts with 401",
+      "full_description": "RoctoCop::Helpers::Request verify_webhook_signature with mismatched digest halts with 401",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+      "line_number": 73,
+      "run_time": 0.0371883,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:2:1]",
+      "description": "returns the json parsed body",
+      "full_description": "RoctoCop::Helpers::Request payload returns the json parsed body",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+      "line_number": 38,
+      "run_time": 0.0399728,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:1]",
+      "description": "raises an Argument error when an Octokit Client is not provided",
+      "full_description": "RoctoCop::Events::CheckRun#process raises an Argument error when an Octokit Client is not provided",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 19,
+      "run_time": 0.0464128,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:2:1]",
+      "description": "skips processing all together",
+      "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client when called with an unknown check name skips processing all together",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 38,
+      "run_time": 0.0819079,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:3:1]",
+      "description": "creates a new RoctoCop Linter check_run",
+      "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client with a rerequested run creates a new RoctoCop Linter check_run",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 48,
+      "run_time": 0.0622922,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:5:1]",
+      "description": "runs the provided action",
+      "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client with a requested action runs the provided action",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 66,
+      "run_time": 0.0831464,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:1:1]",
+      "description": "skips processing all together",
+      "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client with a random action skips processing all together",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 29,
+      "run_time": 0.040152,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:4:1]",
+      "description": "runs the provided check",
+      "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client with a created run runs the provided check",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 57,
+      "run_time": 0.0594345,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:1:1]",
+      "description": "succeeds when a payload is passed",
+      "full_description": "RoctoCop::Events::CheckRun initialization succeeds when a payload is passed",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+      "line_number": 11,
+      "run_time": 0.0134444,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:1]",
+      "description": "raises an Argument error when an Octokit Client is not provided",
+      "full_description": "RoctoCop::Events::CheckSuite#process raises an Argument error when an Octokit Client is not provided",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+      "line_number": 19,
+      "run_time": 0.1361071,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:2:2:1]",
+      "description": "creates a new RoctoCop Linter check_run",
+      "full_description": "RoctoCop::Events::CheckSuite#process when called with a valid client with a request action creates a new RoctoCop Linter check_run",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+      "line_number": 38,
+      "run_time": 0.0446941,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:2:3:1]",
+      "description": "creates a new RoctoCop Linter check_run",
+      "full_description": "RoctoCop::Events::CheckSuite#process when called with a valid client with a request action creates a new RoctoCop Linter check_run",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+      "line_number": 47,
+      "run_time": 0.0703323,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:2:1:1]",
+      "description": "skips processing all together",
+      "full_description": "RoctoCop::Events::CheckSuite#process when called with a valid client with a random action skips processing all together",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+      "line_number": 29,
+      "run_time": 0.0380604,
+      "pending_message": null
+    },
+    {
+      "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:1:1]",
+      "description": "succeeds when a payload is passed",
+      "full_description": "RoctoCop::Events::CheckSuite initialization succeeds when a payload is passed",
+      "status": "passed",
+      "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+      "line_number": 11,
+      "run_time": 0.0497443,
+      "pending_message": null
+    }
+  ],
+  "profile": {
+    "examples": [
+      {
+        "id": "./spec/lib/rocto_cop/server_spec.rb[1:1:1]",
+        "description": "returns 200 status code",
+        "full_description": "RoctoCop::Server GET /is_alive returns 200 status code",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+        "line_number": 13,
+        "run_time": 0.1690103,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:1:1:1]",
+        "description": "halts with 401",
+        "full_description": "RoctoCop::Server POST /event_handler event validations with an invalid signature halts with 401",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+        "line_number": 36,
+        "run_time": 0.164731,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:1]",
+        "description": "raises an Argument error when an Octokit Client is not provided",
+        "full_description": "RoctoCop::Events::CheckSuite#process raises an Argument error when an Octokit Client is not provided",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+        "line_number": 19,
+        "run_time": 0.1361071,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb[1:2:1]",
+        "description": "runs to completion",
+        "full_description": "RoctoCop::Actions::Linter::FixAll instance runs to completion",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb",
+        "line_number": 46,
+        "run_time": 0.1159108,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:4:1:1]",
+        "description": "it returns true",
+        "full_description": "RoctoCop::Helpers::Request verify_webhook_signature with matching digest it returns true",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+        "line_number": 64,
+        "run_time": 0.097019,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/server_spec.rb[1:2:3:1]",
+        "description": "processes the event and returns a 200",
+        "full_description": "RoctoCop::Server POST /event_handler with a valid check_suite request event processes the event and returns a 200",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/server_spec.rb",
+        "line_number": 108,
+        "run_time": 0.0949358,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:5:1]",
+        "description": "runs the provided action",
+        "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client with a requested action runs the provided action",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+        "line_number": 66,
+        "run_time": 0.0831464,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/events/check_run_spec.rb[1:2:2:2:1]",
+        "description": "skips processing all together",
+        "full_description": "RoctoCop::Events::CheckRun#process when called with a valid client when called with an unknown check name skips processing all together",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/events/check_run_spec.rb",
+        "line_number": 38,
+        "run_time": 0.0819079,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/helpers/request_spec.rb[1:3:1]",
+        "description": "returns an Octokit Client",
+        "full_description": "RoctoCop::Helpers::Request client returns an Octokit Client",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/helpers/request_spec.rb",
+        "line_number": 51,
+        "run_time": 0.0727274,
+        "pending_message": null
+      },
+      {
+        "id": "./spec/lib/rocto_cop/events/check_suite_spec.rb[1:2:2:3:1]",
+        "description": "creates a new RoctoCop Linter check_run",
+        "full_description": "RoctoCop::Events::CheckSuite#process when called with a valid client with a request action creates a new RoctoCop Linter check_run",
+        "status": "passed",
+        "file_path": "./spec/lib/rocto_cop/events/check_suite_spec.rb",
+        "line_number": 47,
+        "run_time": 0.0703323,
+        "pending_message": null
+      }
+    ],
+    "slowest": 1.085828,
+    "total": 2.000983,
+    "groups": [
+      {
+        "count": 7,
+        "start": "2020-03-10T09:38:07.357+01:00",
+        "description": "RoctoCop::Server",
+        "total_time": 0.566458,
+        "average": 0.08092257142857143,
+        "location": "./spec/lib/rocto_cop/server_spec.rb:5"
+      },
+      {
+        "count": 2,
+        "start": "2020-03-10T09:38:07.074+01:00",
+        "description": "RoctoCop::Actions::Linter::FixAll",
+        "total_time": 0.1587789,
+        "average": 0.07938945,
+        "location": "./spec/lib/rocto_cop/actions/linter/fix_all_spec.rb:5"
+      },
+      {
+        "count": 5,
+        "start": "2020-03-10T09:38:08.731+01:00",
+        "description": "RoctoCop::Events::CheckSuite",
+        "total_time": 0.3412828,
+        "average": 0.06825656,
+        "location": "./spec/lib/rocto_cop/events/check_suite_spec.rb:5"
+      },
+      {
+        "count": 5,
+        "start": "2020-03-10T09:38:08.041+01:00",
+        "description": "RoctoCop::Helpers::Request",
+        "total_time": 0.3004339,
+        "average": 0.06008677999999999,
+        "location": "./spec/lib/rocto_cop/helpers/request_spec.rb:15"
+      },
+      {
+        "count": 7,
+        "start": "2020-03-10T09:38:08.341+01:00",
+        "description": "RoctoCop::Events::CheckRun",
+        "total_time": 0.3898458,
+        "average": 0.055692257142857145,
+        "location": "./spec/lib/rocto_cop/events/check_run_spec.rb:5"
+      },
+      {
+        "count": 3,
+        "start": "2020-03-10T09:38:07.923+01:00",
+        "description": "RoctoCop::Checks::Linter",
+        "total_time": 0.1177392,
+        "average": 0.0392464,
+        "location": "./spec/lib/rocto_cop/checks/linter_spec.rb:5"
+      },
+      {
+        "count": 4,
+        "start": "2020-03-10T09:38:07.233+01:00",
+        "description": "RoctoCop::Helpers::AppClient",
+        "total_time": 0.1239968,
+        "average": 0.0309992,
+        "location": "./spec/lib/rocto_cop/helpers/app_client_spec.rb:10"
+      }
+    ]
+  },
+  "summary": {
+    "duration": 2.000983,
+    "example_count": 33,
+    "failure_count": 0,
+    "pending_count": 0,
+    "errors_outside_of_examples_count": 0
+  },
+  "summary_line": "33 examples, 0 failures"
+}
