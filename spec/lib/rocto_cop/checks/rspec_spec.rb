@@ -261,7 +261,7 @@ RSpec.describe RoctoCop::Checks::Rspec do
                 text: expected_text,
                 annotations: expected_annotations
               },
-              actions: ["broken"]
+              actions: []
             )
         )
 
