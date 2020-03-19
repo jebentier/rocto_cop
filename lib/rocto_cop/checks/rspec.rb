@@ -84,11 +84,11 @@ module RoctoCop
 
       def annotation_message(example)
         <<~ANNOTATION.chomp
-          #{example["full_description"]}
-              #{example.dig("exception", "class")}: #{example.dig("exception", "message")}
+          #{example['full_description']}
+              #{example.dig('exception', 'class')}: #{example.dig('exception', 'message')}
 
-          Run Time: #{(example["run_time"] * 1000).to_i}ms
-          Re-Run Locally With: `bundle exec rspec #{example["file_path"]}:#{example["line_number"]}`
+          Run Time: #{(example['run_time'] * 1000).to_i}ms
+          Re-Run Locally With: `bundle exec rspec #{example['file_path']}:#{example['line_number']}`
         ANNOTATION
       end
 
@@ -96,22 +96,22 @@ module RoctoCop
         <<~SUMMARY.chomp
           ### RoctoCop Tester Summary
 
-          Executed: #{test_results.dig("summary", "example_count")}
-          Passed: #{test_results.dig("summary", "example_count") - test_results.dig("summary", "failure_count")}
-          Pending: #{test_results.dig("summary", "pending_count")}
-          Failed: #{test_results.dig("summary", "failure_count")}
+          Executed: #{test_results.dig('summary', 'example_count')}
+          Passed: #{test_results.dig('summary', 'example_count') - test_results.dig('summary', 'failure_count')}
+          Pending: #{test_results.dig('summary', 'pending_count')}
+          Failed: #{test_results.dig('summary', 'failure_count')}
 
           #### Run Profiling
-          Total Run Duration: #{test_results.dig("profile", "total")}
-          Slowest Test File: #{test_results.dig("profile", "groups").first["description"]}
-          Slowest Test: #{test_results.dig("profile", "examples").first["full_description"]}
+          Total Run Duration: #{test_results.dig('profile', 'total')}
+          Slowest Test File: #{test_results.dig('profile', 'groups').first['description']}
+          Slowest Test: #{test_results.dig('profile', 'examples').first['full_description']}
         SUMMARY
       end
 
       def text
         <<~TEXT.chomp
-          RoctoCop Tester RSpec version: #{test_results["version"]}
-          RoctoCop Tester RSpec seed: #{test_results["seed"]}
+          RoctoCop Tester RSpec version: #{test_results['version']}
+          RoctoCop Tester RSpec seed: #{test_results['seed']}
         TEXT
       end
 
