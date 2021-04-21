@@ -19,7 +19,7 @@ GEM
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
-    jwt (2.2.1)
+    jwt (2.2.3)
     minitest (5.14.0)
     multipart-post (2.1.1)
     mustermann (1.1.1)
@@ -80,6 +80,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   activesupport (~> 5.0)
