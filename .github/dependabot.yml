@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: activesupport
+    versions:
+    - 5.2.4.4
+    - 5.2.4.5
+  - dependency-name: octokit
+    versions:
+    - 4.20.0
+  - dependency-name: jwt
+    versions:
+    - 2.2.2
