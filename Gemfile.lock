@@ -74,12 +74,13 @@ GEM
       tilt (~> 2.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tzinfo (1.2.6)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   activesupport (~> 5.0)
