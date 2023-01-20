@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '~> 5.0'
+gem 'activesupport', '~> 6.1'
 gem 'dotenv',        '~> 2.7'
 gem 'git',           '~> 1.6'
 gem 'jwt',           '~> 2.1'
